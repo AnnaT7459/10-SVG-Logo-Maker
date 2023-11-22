@@ -12,19 +12,19 @@
 // SVG VS Code extension https://marketplace.visualstudio.com/items?itemName=jock.svg
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateLogo = ({ text, textColor, shape, shapeColor })
+const generateLogo = ({ characters, charColor, shape, shapeColor })
 
 function init() {
     inquirer
         .prompt([
             {
                 type: 'input',
-                name: 'text',
+                name: 'characters',
                 message: 'Enter 3 characters of text for your logo.',
             },
             {
                 type: 'input',
-                name: 'textColor',
+                name: 'charColor',
                 message: 'What color would you like your text to be?',
             },
             {
@@ -42,7 +42,7 @@ function init() {
         .then((answers) => {
             const logoContent = generateLogo(answers);
             fs.writeFile('logo.svg', logoContent, (err) =>
-                err ? console.log(err) : console.log('Successfully created logo.svg!')
+                err ? console.log(err) : console.log('Genereated logo.svg!')
             );
         });
 }
