@@ -15,7 +15,7 @@ const inquirer = require('inquirer');
 const { Circle, Triangle, Square } = require('./lib/shapes')
 
 function init() {
-    inquirer  
+    inquirer
         .prompt([
             {
                 type: 'list',
@@ -40,13 +40,36 @@ function init() {
             }
         ])
 
+        // switch(expression) {
+//   case x:
+//     // code block
+//     break;
+//   case y:
+//     // code block
+//     break;
+//   default:
+//     // code block
+// }
         .then((answers) => {
-            const logoContent = generateLogo(answers);
-            fs.writeFile('logo.svg', logoContent, (err) =>
-                err ? console.log(err) : console.log('Genereated logo.svg!')
-            );
-        });
-}
+            let userShape
+            switch (shape) {
+                case 'circle':
+                    userShape = new Circle ()
+                    break;
+                    case 'triangle':
+                        userShape = new Triangle ()
+                        break;
+                        case 'square':
+                            userShape = new Square ()
+            } 
+            userShape.setColor(shapeColor)
+            })      
+// const logoContent = generateLogo(answers);
+// fs.writeFile('logo.svg', logoContent, (err) =>
+//     err ? console.log(err) : console.log('Genereated logo.svg!')
+// );
+//         });
+// }
 
 init();
 
