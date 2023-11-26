@@ -13,6 +13,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const { Circle, Triangle, Square } = require('./lib/shapes')
+const logoContent = require('./logoContent')
 
 function init() {
     inquirer
@@ -64,6 +65,7 @@ function init() {
             } 
             userShape.setColor(shapeColor)
             })      
+        }
 // const logoContent = generateLogo(answers);
 // fs.writeFile('logo.svg', logoContent, (err) =>
 //     err ? console.log(err) : console.log('Genereated logo.svg!')
@@ -73,15 +75,3 @@ function init() {
 
 init();
 
-// Circle
-// `<svg width = "300" height = "200"><circle cx="150" cy="100" r="50" fill="${shapeColor}/><text x = "0" y = "15" fill = ${charColor}>${characters}/text></svg>`
-
-// Triangle
-// `<svg height="300" width="200">
-//       <polygon points="100,20 10,180 190,180" style="fill:"${shapeColor}"/><text x = "0" y = "15" fill = ${this.charColor}>${characters}/text>
-//     </svg>`
-
-// Square
-// `<svg width="300" height="200">
-//     <rect x = "50" y = "20" width = "150" height = "150" style = fill = "${shpaeColor}"/><text x = "0" y = "15" fill = ${charColor}>${characters}/text>
-//   </svg>`
