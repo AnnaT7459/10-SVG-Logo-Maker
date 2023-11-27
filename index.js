@@ -10,10 +10,10 @@
 // Text in SVG https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Texts
 
 // SVG VS Code extension https://marketplace.visualstudio.com/items?itemName=jock.svg
-const fs = require('fs');
+const { readFile, writeFile } = require('fs/promises');
 const inquirer = require('inquirer');
 const { Circle, Triangle, Square } = require('./lib/shapes')
-const logoContent = require('./logoContent')
+const LogoContent = require('./logoContent');
 
 function init() {
     inquirer
@@ -42,35 +42,46 @@ function init() {
         ])
 
         // switch(expression) {
-//   case x:
-//     // code block
-//     break;
-//   case y:
-//     // code block
-//     break;
-//   default:
-//     // code block
-// }
-        .then((answers) => {
+        //   case x:
+        //     // code block
+        //     break;
+        //   case y:
+        //     // code block
+        //     break;
+        //   default:
+        //     // code block
+        // }
+        // https://www.w3schools.com/js/js_switch.asp
+        .then (( { shape, shapeColor, characters, charColor } ) => {
+            console.log(shape, shapeColor, characters, charColor)
             let userShape
             switch (shape) {
                 case 'circle':
-                    userShape = new Circle ()
+                    console.log('circle')
+                    userShape = new Circle()
                     break;
-                    case 'triangle':
-                        userShape = new Triangle ()
-                        break;
-                        case 'square':
-                            userShape = new Square ()
-            } 
+                case 'triangle':
+                    userShape = new Triangle()
+                    break;
+                case 'square':
+                    userShape = new Square()
+            }
             userShape.setColor(shapeColor)
-            })      
-        }
+// Discord study group with H. Burke
+            const logoContent = new LogoContent()
+            logoContent.setContent(characters, charColor)
+            logoContent.setShape(userShape)
+            return writeFile('logo.svg', logoContent.render())
+        })
+        .then(() => {
+            console.log('Generated logo.svg!')
+        })
+}
 // const logoContent = generateLogo(answers);
-// fs.writeFile('logo.svg', logoContent, (err) =>
-//     err ? console.log(err) : console.log('Genereated logo.svg!')
+// fs.writeFile
 // );
-//         });
+//         });('logo.svg', logoContent, (err) =>
+//     err ? console.log(err) : console.log('Genereated logo.svg!')
 // }
 
 init();

@@ -7,8 +7,8 @@
 // Square
 // `<svg width="300" height="200"><text x = "0" y = "15" fill = ${charColor}>${characters}/text></svg>`
 
-class logoContent {
-    constructor () {
+class LogoContent {
+    constructor() {
         this.characters = ''
         this.shape = ''
     }
@@ -18,13 +18,13 @@ class logoContent {
 
     setContent(characters, charColor) {
         if (characters.length > 3) {
-            throw new Error ('limit your logo to 3 characters')
+            throw new Error('limit your logo to 3 characters')
         }
-        this.characters = `<text x = "0" y = "15" fill = ${charColor}>${characters}/text>`
+        this.characters = `<text x = "50%" y = "50%" fill = "${charColor}">${characters}</text>`
     }
     setShape(shape) {
         this.shape = shape.render()
     }
 }
 
-module.exports = logoContent
+module.exports = LogoContent
