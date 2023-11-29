@@ -1,7 +1,7 @@
 # SVG Logo Maker
 
 ## Description
-If I were a freelance web developer, I would want to generate a simple logo for my projects so that I would not have to pay a graphic designer. I learned how to create classes that inherit parent classes and how to run backend tests with render methods.
+If I were a freelance web developer, I would want to generate a simple logo for my projects so that I would not have to pay a graphic designer. I learned how to create functiond and properties that inherit parent classes for reuse of code, and how to run backend tests with render methods.
 
 ## Table of Contents
 - [Installation](#installation)
@@ -13,11 +13,12 @@ If I were a freelance web developer, I would want to generate a simple logo for 
 - [Questions](#questions)
 
 ## Installation
-In order to install the application, users will need to download VS Code and within VS Code, install inquirer, jest, and SVG previewer. 
+In order to install the application, users will need to download Node.js and VS Code. Within VS Code, install inquirer, jest, and SVG previewer. 
 
 ## Usage
 Start the application in the integrated terminal, run node index.js, and that will prompt the user to input the shape, the color of the shape, 3 characters for the logo, and the color of the text. Once entered, the application will generate an SVG logo in a logo.svg file to be previewed.
 
+Video Walkthrough: https://drive.google.com/file/d/1lJ2dSHk8xwPRTIobEE89hpXx2SOKEfjP/view
 
 ## License
 N/A
