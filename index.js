@@ -77,12 +77,6 @@ function init() {
             console.log('Generated logo.svg!')
         })
 }
-// const logoContent = generateLogo(answers);
-// fs.writeFile
-// );
-//         });('logo.svg', logoContent, (err) =>
-//     err ? console.log(err) : console.log('Genereated logo.svg!')
-// }
 
 init();
 
